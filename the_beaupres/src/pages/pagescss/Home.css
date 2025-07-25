@@ -1,0 +1,190 @@
+/* 1. Global reset */
+body {
+  margin: 0;
+}
+
+/* 2. Container centering */
+.home-container {
+  color: #251d1d;
+}
+.home-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: .5rem;
+  background-color: var(--bg);
+}
+
+/* 3. Hero section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-text {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+}
+.hero-text h1 {
+  margin: 0;
+  font-size: 5rem;
+  color: #be6565;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+/* 4. Main nav (below hero) */
+.home-nav {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: 0.75rem 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.home-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 0.25rem;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+.home-nav a:hover {
+  color: var(--highlight);
+  border-bottom: 2px solid var(--highlight);
+}
+
+/* 5. Image + Links two-col section */
+.image-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; /* push them to the edges */
+  gap: 2rem;
+  max-width: 900px;
+}
+
+/* Left column: the image, right-aligned */
+.image-links__left {
+  flex: 1 1 45%;
+  
+  display: flex;
+  justify-content: flex-end;
+}
+.image-links__left img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1px;
+}
+
+/* Right column: the cards, left-aligned */
+.image-links__right {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.image-links__right .card {
+  padding: .5rem;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+.image-links__right .card:hover {
+  background: var(--highlight);
+  transform: translateY(-4px);
+}
+
+/* 6. Intro & Call-to-action button */
+.intro {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.button {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.button:hover {
+  background-color: var(--highlight);
+}
+
+/* 7. Responsive stacking */
+@media (max-width: 600px) {
+  .image-links {
+    flex-direction: column;
+
+  }
+  .image-links__left,
+  .image-links__right {
+    flex: 1 1 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ensure right-column content stacks from the top */
+.image-links__right {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* card container */
+.info-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffffa4;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* title styling */
+.info-card__title {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+/* body text */
+.info-card__text {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* action buttons row */
+.info-card__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* make each .card fill half the width */
+.info-card__actions .card {
+  flex: 1;
+}
